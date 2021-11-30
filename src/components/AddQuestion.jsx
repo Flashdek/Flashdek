@@ -2,7 +2,7 @@ import React from 'react';
 
 const AddQuestion = () => {
   return (
-    <div>
+    <div id="questionInput">
       Add Question component
       <div className="categories">
         Categories/Keywords
@@ -10,11 +10,11 @@ const AddQuestion = () => {
       </div>
       <div className="question">
         Question
-        <textarea></textarea>
+        <textarea rows='4' cols='30'></textarea>
       </div>
       <div className="answer">
         Answer
-        <textarea></textarea>
+        <textarea rows='4' cols='30'></textarea>
       </div>
       <button id="submit">Submit</button>
     </div>
