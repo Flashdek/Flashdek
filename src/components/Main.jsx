@@ -4,7 +4,8 @@ import Search from './Search';
 import Nav from './Nav';
 import Header from './Header';
 const Main = (props) => {
-  return (<div className="main"><Feed /> 
+  return (<div className="main">
+    <Feed /> 
     <div className="right-bar">
       <Search /> 
       <Nav />
