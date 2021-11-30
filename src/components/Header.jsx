@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function header( {username}) {
+const Header = () => {
     return (
         <div id='Header'>
             <div id='logo'>Flashdek</div>
             <div id='headerbtns'>
-                <button type='button'>LogIn</button>
+                <Link to="/login"><button type='button'>LogIn</button></Link>
                 <button type='button'>SignUp</button>
             </div>
         </div>
     )
 }
+
+export default Header;

@@ -4,10 +4,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Main from './components/Main';
 import AddQuestion from './components/AddQuestion';
-
+import Login from './components/Login';
 const App = () => {
   return (
-    <div>Hello THERE!!!
+    <div>
       <BrowserRouter>
         <Routes>
           <Route
@@ -20,6 +20,7 @@ const App = () => {
             path="/add"
             element={<AddQuestion/>}
           />
+          <Route exact path="/login" element={<Login/>}/>
           {/* <Route
           exact
           path="/"
