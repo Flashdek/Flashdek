@@ -7,6 +7,15 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/', express.static(path.resolve(__dirname, '../public')));
 
+// // handle requests to login page endpoint
+// app.get('/login', (req, res) => {
+
+// })
+
+// app.get('/login', (req, res) => {
+//   res.sendFile(path.join(__dirname, ''));
+// });
+
 app.use((req, res) => res.status(404).send('This is not the page you are looking for'));
 
 app.use((err, req, res, next) => {
