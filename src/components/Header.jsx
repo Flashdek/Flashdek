@@ -7,7 +7,7 @@ const Header = () => {
             <div id='logo'>Flashdek</div>
             <div id='headerbtns'>
                 <Link to="/login"><button type='button'>LogIn</button></Link>
-                <button type='button'>SignUp</button>
+                <Link to="/signup"><button type='button'>SignUp</button></Link>
             </div>
         </div>
     )
