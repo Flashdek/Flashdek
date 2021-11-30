@@ -1,4 +1,5 @@
 import React from 'react';
+import "./stylesheets/style.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Main from './components/Main';
@@ -36,9 +37,7 @@ const App = () => {
         /> */}
         </Routes>
       </BrowserRouter>
-
     </div>
-
   );
 };
 
