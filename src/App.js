@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Main from './components/Main';
 import AddQuestion from './components/AddQuestion';
-
+import Login from './components/Login';
+import Signup from './components/Signup';
 const App = () => {
   return (
     <div><Header />
@@ -20,6 +21,8 @@ const App = () => {
             path="/add"
             element={<AddQuestion/>}
           />
+          <Route exact path="/login" element={<Login/>}/>
+          <Route exact path="/signup" element={<Signup/>}/>
           {/* <Route
           exact
           path="/"
