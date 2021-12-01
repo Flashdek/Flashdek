@@ -137,10 +137,26 @@ button:hover {
 .question, .answer, .categories {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
-#submit {
+/* rows and columns for AddQuestion styling */
+.row {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 25% 0 25%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  justify-content: center;
+}
+
+#submit {
+  margin: 0 0 0 72%;
 }
