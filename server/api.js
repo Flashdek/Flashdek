@@ -14,9 +14,12 @@ router.post('/submitCard', cardControllers.submitCard, (req, res) => {
   res.sendStatus(201);
 })
 
-router.post('/addUser', userControllers.addUser, (req, res) => res.status(200).json(res.locals.data));
+router.delete('/deleteCard/:id', cardControllers.deleteCard, (req, res) => res.sendStatus(200));
 
-// router.delete('/deleteCard', cardControllers.deleteCard, (req, res) => res.status(200).json(res.locals.data));
+router.post('/addUser', userControllers.addUser, (req, res) => res.sendStatus(200).json(res.locals.data));
 
+router.delete('/deleteUser/:id', userControllers.deleteUser, (req, res) => {
+  console.log('deleted user');
+  res.sendStatus(200)});
 
 module.exports = router;
