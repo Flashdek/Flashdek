@@ -14,6 +14,10 @@ router.post('/submitCard', cardControllers.submitCard, (req, res) => {
   res.sendStatus(201);
 })
 
+router.post('/updateCard', cardControllers.updateCard, (req, res) =>{
+	res.sendStatus(201);
+})
+
 router.delete('/deleteCard/:id', cardControllers.deleteCard, (req, res) => res.sendStatus(200));
 
 router.post('/addUser', userControllers.addUser, (req, res) => res.sendStatus(200).json(res.locals.data));

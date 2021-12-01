@@ -1,11 +1,26 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import Card from './Card';
+import axios from 'axios';
 
 const Feed = (props) => {
+
+	const [cards, setCards] = useState([]);
+
+	useEffect(()=>{
+		axios.get('/api/').then((res) =>{
+			setCards(res);
+		})
+	}, []);
+
+	const cardsArr = [];
+	
+	cards.forEach(card =>{
+		cardsArr.push(<Card question={card.question} answer={card.answer} />);
+	})
+	
+
   return (<div className="feed">Feed Component
-    <Card question="What is React?" answer="A node library" />
-    <Card question="What is Express?" answer="A node backend library" />
-    <Card question="What is React?" answer="A node library" />
+    {cardsArr}
   </div>);
 }
 

@@ -45,4 +45,21 @@ cardControllers.deleteCard = (req, res, next) => {
   })
 }
 
+cardControllers.updateCard = (req, res, next) => {
+	const { id, keyword, question, answer } = req.body;
+
+  models.Flashcard.findOneAndUpdate({ _id: id}, {
+    "keyword" : keyword,
+    "question" : question,
+    "answer" : answer
+  })
+    .then((data) => {
+      res.locals.data = data;
+      return next();
+    })
+    .catch((error) => {
+      return next(error);
+    })
+}
+
 module.exports = cardControllers;
