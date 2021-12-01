@@ -2,10 +2,15 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const PORT = 3000;
+const api = require('./api')
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+// route all incoming requests to api.js
+app.use('/api', api);
+
 app.use('/', express.static(path.resolve(__dirname, '../public')));
+
 
 app.use((req, res) => res.status(404).send('This is not the page you are looking for'));
 
@@ -19,4 +24,8 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`Server listening on port: ${PORT}`);
+});
+
+module.exports = app;
