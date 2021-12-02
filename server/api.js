@@ -2,12 +2,15 @@ const express = require('express');
 
 const cardControllers = require('./controllers/cardControllers');
 const userControllers = require('./controllers/userControllers');
+//const tokenController = require('./controllers/tokenController');
 
 const router = express.Router();
 
 router.get('/', cardControllers.getCards, (req, res) => res.status(200).json(res.locals.data));
 
 router.get('/getUsers', userControllers.getUser, (req, res) => res.status(200).json(res.locals.data));
+
+//router.get('/getToken/:code', tokenController.getToken, (req,res) => res.json(res.locals.user));
 
 router.post('/submitCard', cardControllers.submitCard, (req, res) => {
   console.log('we made it to the 201 status');

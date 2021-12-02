@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const AddQuestion = () => {
 
@@ -64,10 +65,10 @@ const AddQuestion = () => {
       })
     })
       .then(() => {
-        const updatedCheckedState = checkedState.map((item, index) =>
-          index === position ? !item : item
-          );
-        setCheckedState(updatedCheckedState);
+        // const updatedCheckedState = checkedState.map((item, index) =>
+        //   index === position ? !item : item
+        //   );
+        // setCheckedState(updatedCheckedState);
         setQuestion('');
         setAnswer('');
         alert('Your question has been submitted!');
@@ -103,6 +104,7 @@ const AddQuestion = () => {
         </div>
       </div>
       <button id="submit" onClick={submitHandler}>Submit</button>
+      <a href="/"><button>Return to Home Page</button></a>
     </div>
   );
 }

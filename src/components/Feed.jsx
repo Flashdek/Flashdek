@@ -7,8 +7,9 @@ const Feed = (props) => {
 	const [cards, setCards] = useState([]);
 
 	useEffect(()=>{
-		axios.get('/api/').then((res) =>{
-			setCards(res);
+		axios.get('api/').then((res) =>{
+			console.log(' RESPONSE FROM SERVER : ', res);
+			setCards(res.data);
 		})
 	}, []);
 
@@ -19,7 +20,8 @@ const Feed = (props) => {
 	})
 	
 
-  return (<div className="feed">Feed Component
+  return (<div className="feed">
+		<h1 id="cards-header">Cards</h1>
     {cardsArr}
   </div>);
 }
