@@ -1,9 +1,12 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 const api = require('./api')
 
+app.use(cors());
+app.options('*', cors())
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 // route all incoming requests to api.js

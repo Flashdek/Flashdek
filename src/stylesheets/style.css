@@ -1,6 +1,11 @@
+body {
+  background-color: #ffc934;
+  font-family: arial;
+}
+
 div {
-  border: 1px solid black;
-  border-radius: 2px;
+  /* border: 1px solid rgb(255, 255, 255);
+  border-radius: 2px; */
 }
 
 /* width */
@@ -16,30 +21,39 @@ div {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #e63946;
-  border-radius: 2px;
+  background: #c4235e;
+  border-radius: 6px;
 }
 
 button {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #c4235e;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px;
 }
 
 button:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 #Header {
-  height: 5em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 5px;
+  font-size: 36px;
+  color: black;
 }
 .main {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 10fr 1fr;
 }
 
 .feed {
@@ -48,7 +62,7 @@ button:hover {
   align-items: center;
   justify-content: space-around;
   padding: 10px;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 
@@ -67,7 +81,7 @@ button:hover {
   align-items: center;
 }
 
-.card-footer{
+.card-footer {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -79,9 +93,9 @@ button:hover {
   /* Add shadows to create the "card" effect */
   background-color: transparent;
   width: 300px;
-  height: 200px;
+  height: 250px;
   border: 1px solid #f1f1f1;
-  perspective: 1000px; 
+  perspective: 1000px;
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
@@ -93,16 +107,15 @@ button:hover {
   transition: 0.3s;
 }
 
-
 /* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 200px;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -111,15 +124,15 @@ button:hover {
 } */
 
 /* Position the front and back side */
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
-  height: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
-
 
 .flip-card-front {
   background-color: white;
@@ -127,14 +140,16 @@ button:hover {
 }
 
 .flip-card-back {
-  background-color: black;
-  color: white;
+  /* background-color: black;
+  color: white; */
+  background-color: rgb(165, 165, 165);
+  color: black;
   transform: rotateY(180deg);
 }
 
-
-
-.question, .answer, .categories {
+.question,
+.answer,
+.categories {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -158,5 +173,27 @@ button:hover {
 }
 
 #submit {
-  margin: 0 0 0 72%;
+  margin: 0 0 0 71%;
+}
+
+#headerbtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#cards-header {
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-decoration: none;
+}
+
+ul li {
+  font-size: 0.7em;
 }

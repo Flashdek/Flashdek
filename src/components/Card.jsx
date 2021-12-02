@@ -7,8 +7,8 @@ const Card = (props) =>{
     else setFlip("");
   }
 
-  return (<div className="card" onClick={()=>flipCard()} >
-    <div className="flip-card-inner" style={{transform: flip}}>
+  return (<div className="card"  >
+    <div className="flip-card-inner" style={{transform: flip}} onClick={()=>flipCard()}>
       <div className="flip-card-front" >
         <h1>QUESTION</h1>
         <p>{props.question}</p>

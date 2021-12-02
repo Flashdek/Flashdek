@@ -20,27 +20,28 @@ userControllers.addUser = (req, res, next) => {
         "email": email,
         "password": password
     }
-    console.log('newUser in userControllers.js: ', newUser);
   models.User.create(newUser)
-  .then((data) => {
-    res.locals.data = data;
-    return next();
+    .then((data) => {
+      res.locals.data = data;
+      return next();
+    })
+    .catch((error) => {
+      return next(error);
+    })
+}
+
+
+userControllers.deleteUser = (req, res, next) => {
+  //receives the user id from the url params which is the _id property in the mongoDB documents\
+  models.User.deleteOne({
+    '_id': req.params.id
+  })
+  .then(() => {
+    return next()
   })
   .catch((error) => {
     return next(error);
   })
 }
 
-
-
-
-
-
 module.exports = userControllers;
-
-// const userSchema = new Schema({
-//   name: String,
-//   username: String,
-//   email: String,
-//   password: String
-// });
